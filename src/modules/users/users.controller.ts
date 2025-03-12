@@ -8,7 +8,7 @@ export class UsersController {
     constructor(private readonly usersService: UsersService) { };
 
     @Get()
-    async getAll(): Promise<User[]> {
+    getAll(): Promise<User[]> {
         return this.usersService.getAll();
     }
     @Get(':id')

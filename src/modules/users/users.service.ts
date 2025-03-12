@@ -46,4 +46,10 @@ export class UsersService {
             DELETE FROM user WHERE id = ${Number(id)}
             `);
     }
-}
+
+    async findOne( name: string): Promise<User| undefined>{
+        return await this.userRepository.query(
+            `SELECT * FROM user WHERE name ='${name}'`
+        )
+    }
+} 
